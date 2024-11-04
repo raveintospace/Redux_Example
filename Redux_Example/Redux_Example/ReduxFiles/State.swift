@@ -10,4 +10,5 @@ import SwiftUI
 struct State {
     var names: [String] = ["Welcome to this tutorial", "Let's learn"]
     
+    var numbers: [String] = ["1", "2"]
 }

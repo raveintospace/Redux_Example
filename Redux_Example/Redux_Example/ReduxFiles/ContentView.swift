@@ -13,17 +13,30 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(store.state.names, id: \.self) { name in
-                    Text(name)
+            VStack(spacing: 10) {
+                List {
+                    ForEach(store.state.names, id: \.self) { name in
+                        Text(name)
+                    }
                 }
+                
+                List {
+                    ForEach(store.state.numbers, id: \.self) { number in
+                        Text(number)
+                    }
+                }
+                
             }
             .toolbar {
-                Button("Tap me") {
+                Button("Add names") {
                     store.reduce(action: .loadNames)
                 }
+                .tint(.red)
+                Button("Add numbers") {
+                    store.reduce(action: .loadNumbers)
+                }
             }
-            .navigationTitle("Names")
+            .navigationTitle("Redux tutorial")
         }
     }
 }
