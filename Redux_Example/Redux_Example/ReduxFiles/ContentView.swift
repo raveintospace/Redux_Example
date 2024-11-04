@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var store: Store = Store(initialState: State(), reducer: appReducer)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(store.state.names, id: \.self) { name in
+                    Text(name)
+                }
+            }
+            .toolbar {
+                Button("Tap me") {
+                    store.reduce(action: .loadNames)
+                }
+            }
+            .navigationTitle("Names")
         }
-        .padding()
     }
 }
 

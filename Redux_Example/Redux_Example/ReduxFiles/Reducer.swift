@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-func reducer(action: Action, state: inout State) {
+func appReducer(action: Action, state: inout State) {
     switch action {
     case .loadNames:
         state.names.append(contentsOf: ["Learn Redux", "Learn SwiftUI", "Learn Swift"])

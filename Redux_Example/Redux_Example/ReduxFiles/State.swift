@@ -8,6 +8,6 @@
 import SwiftUI
 
 struct State {
-    var names: [String] = []
+    var names: [String] = ["Welcome to this tutorial", "Let's learn"]
     
 }
