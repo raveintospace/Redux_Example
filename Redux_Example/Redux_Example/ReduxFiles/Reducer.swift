@@ -13,6 +13,8 @@ func appReducer(action: Action, state: inout State) {
         state.names.append(contentsOf: ["Learn Redux", "Learn SwiftUI", "Learn Swift"])
     case .loadNumbers:
         state.numbers.append(contentsOf: ["3", "4", "5"])
+    case .updateTitle:
+        state.someTitle = "Redux example"
     }
 }
 

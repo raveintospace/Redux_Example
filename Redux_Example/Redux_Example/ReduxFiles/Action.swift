@@ -10,4 +10,5 @@ import SwiftUI
 enum Action {
     case loadNames
     case loadNumbers
+    case updateTitle
 }

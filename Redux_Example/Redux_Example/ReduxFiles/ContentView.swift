@@ -25,7 +25,6 @@ struct ContentView: View {
                         Text(number)
                     }
                 }
-                
             }
             .toolbar {
                 Button("Add names") {
@@ -35,8 +34,12 @@ struct ContentView: View {
                 Button("Add numbers") {
                     store.reduce(action: .loadNumbers)
                 }
+                Button("Update title") {
+                    store.reduce(action: .updateTitle)
+                }
+                .tint(.green)
             }
-            .navigationTitle("Redux tutorial")
+            .navigationTitle(store.state.someTitle)
         }
     }
 }
