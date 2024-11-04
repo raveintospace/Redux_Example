@@ -5,6 +5,7 @@
 //  Created by Uri on 4/11/24.
 //
 
+import SwiftUI
 
 func reducer(action: Action, state: inout State) {
     switch action {
